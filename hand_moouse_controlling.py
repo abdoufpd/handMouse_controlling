@@ -1,4 +1,5 @@
 # this code is only for linux .!!! it may cause some lag in mouse
+# u need to run this code with admin permission
 
 import cv2
 import time
@@ -11,7 +12,7 @@ import subprocess
 # ----------------------------
 # Model
 # ----------------------------
-MODEL_PATH = "/home/abdou-pd/CODE/advanced CV/pretrained_models/hand_landmarker.task"
+MODEL_PATH = "/pretrained_model/hand_landmarker.task"
 
 options = vision.HandLandmarkerOptions(
     base_options=python.BaseOptions(model_asset_path=MODEL_PATH),
@@ -120,7 +121,6 @@ while cap.isOpened():
         cv2.FONT_HERSHEY_SIMPLEX,
         1, (0, 255, 0), 2
     )
-    #cv2.putText(frame , f'Point {int(x)}',(450,25),cv2.FONT_HERSHEY_TRIPLEX,1.0, (255.255,100),2)
  
 
     cv2.imshow("Hand Landmarker", frame)
